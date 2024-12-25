@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ベルリンの税金グラフ</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+  
+  <div id="chart" style="width: 1200px; height: 800px;"></div>
+  <script>
+    const chart = echarts.init(document.getElementById('chart'));
+
+    const option = {
+      title: { text: 'ベルリンの税金使途', left: 'center' },
+      tooltip: { trigger: 'item' },
+      series: [
+        {
+          type: 'pie',
+          radius: '50%',
+          data: [
+            { value: 20, name: '教育' },
+            { value: 30, name: '社会福祉' },
+            { value: 15, name: '交通' },
+            { value: 25, name: '医療' },
+            { value: 10, name: 'その他' },
+          ],
+          emphasis: {
+            itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.5)' },
+          },
+        },
+      ],
+    };
+
+    chart.setOption(option);
+  </script>
+</body>
+</html>
